@@ -1,0 +1,4 @@
+LLM_PARAMS:
+  temperature : 0.2
+  max_tokens : 1000
+  model  : "gpt-3.5-turbo"
