@@ -3,6 +3,12 @@ body {
   background-color: #f3f5f9;
   height: 100vh;
   overflow: hidden;
+  margin: 0;
+  background-image: url("/static/images/backgrounds/1.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 h1,
 h2,
@@ -40,15 +46,16 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
 .container {
-  width: 100%;
+  width: 900px;
   margin: 0px 120px;
   overflow-y: scroll;
-  padding: 30px 50px;
+  /* padding: 30px 50px; */
 }
 .chat-container {
-  width: 100%;
+  /* width: 900px; */
 }
 .message {
   padding: 15px;
@@ -73,7 +80,7 @@ html {
 .input-container {
   display: grid;
   align-items: self-start;
-  border: 2px solid #333;
+  border: 2px solid #b0cbe4;
   background-color: #ffffff;
   border-radius: 17px;
   width: 680px;
@@ -134,11 +141,11 @@ html {
   background: transparent;
 }
 .input-box::-webkit-scrollbar-thumb {
-  background-color: #bbb;
+  background-color: #000000;
   border-radius: 4px;
 }
 .input-box::-webkit-scrollbar-thumb:hover {
-  background-color: #bbb;
+  background-color: #000000;
 }
 .send-icon {
   height: 37px;
@@ -147,7 +154,6 @@ html {
 
 .sidebar {
   width: 250px;
-  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -155,16 +161,38 @@ html {
   height: 100%;
   padding: 20px;
   border-right: 1px solid #ccc;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  color: black;
+  border: 1px white solid;
+  backdrop-filter: blur(2px);
+  margin: 10px;
 }
 .new-chat-button {
-  background-color: #000000;
-  color: #ffffff;
+  /* background-color: #000000; */
+  /* color: #ffffff; */
   font-size: 16px;
-  border: none;
+  /* border: none; */
   padding: 10px 10px;
-  border-radius: 9px;
+  /* border-radius: 9px; */
   cursor: pointer;
-  width: 100%;
+  /* width: 100%; */
+  /* padding: 5px 5px; */
+  border-radius: 8px;
+  border: 1px solid white;
+  outline-offset: -1px;
+  background-image: linear-gradient(180deg, #008ffe9c 0%, #84c9ffad 90%);
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.1));
+  display: flex;
+  margin-top: 15px;
+  /* width: 114px; */
+  display: flex;
+  justify-content: center;
+  transition: 0.3s;
+}
+.new-chat-button:hover {
+  transform: translateY(-3px);
 }
 .recent-chats {
   display: flex;
@@ -192,11 +220,11 @@ html {
   background: transparent;
 }
 .session-list::-webkit-scrollbar-thumb {
-  background-color: #bbb;
+  background-color: #000000;
   border-radius: 4px;
 }
 .session-list::-webkit-scrollbar-thumb:hover {
-  background-color: #bbb;
+  background-color: #000000;
 }
 .container::-webkit-scrollbar {
   width: 6px;
@@ -205,20 +233,24 @@ html {
   background: transparent;
 }
 .container::-webkit-scrollbar-thumb {
-  background-color: #bbb;
+  background-color: #000000;
   border-radius: 4px;
 }
 .container::-webkit-scrollbar-thumb:hover {
   background-color: #bbb;
 }
 .chat-item {
-  padding: 10px;
+  padding: 5px 10px;
   font-size: 14px;
   color: #555;
   cursor: pointer;
   border-radius: 4px;
   display: flex;
   justify-content: space-between;
+  /* border: 1px solid #ffffff; */
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  margin-top: 5px;
 }
 .chat-item div {
   padding: 4px;
@@ -286,6 +318,7 @@ html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Arial", sans-serif;
   border: 1px solid #ccc;
+  width: 800px;
 }
 .titles {
   text-align: center;
@@ -344,8 +377,14 @@ html {
 .copy-button,
 .download-button {
   background-color: #ffffff00;
-  transition: opacity 0.3s ease;
+  transition: 0.3s ease;
   height: 18px;
+}
+.copy-button:hover {
+  transform: scale(1.1);
+}
+.download-button:hover {
+  transform: scale(1.1);
 }
 .parent-container:hover .copy-button,
 .parent-container:hover .download-button {
@@ -436,4 +475,9 @@ html {
 .download-image-button:hover {
   background-color: #d6d6d6;
   padding: 1px;
+}
+
+.parent-container{
+  display: grid;
+  justify-content: center;
 }

@@ -2,3 +2,4 @@
 .databricks
 .venv
 .env
+.DS_Store

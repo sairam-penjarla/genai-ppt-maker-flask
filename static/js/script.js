@@ -80,7 +80,7 @@ function slideLoadingAnimation() {
   const chatContainer = document.getElementById("slides-container");
   const loadingMessageContainer = document.createElement("div");
   loadingMessageContainer.classList.add("bot-loading-message-container");
-  loadingMessageContainer.textContent = "...";
+  loadingMessageContainer.textContent = "Creating slides...";
   loadingMessageContainer.id = "slide-loading-animation";
   chatContainer.appendChild(loadingMessageContainer);
   chatContainer.scrollTop = chatContainer.scrollHeight;
