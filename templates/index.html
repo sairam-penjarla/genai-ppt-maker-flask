@@ -10,22 +10,38 @@
             <link rel="stylesheet" href="{{ url_for('static', filename='css/markdown_styles.css') }}" />
       </head>
       <body>
+            <div class="color-mode-toggle-container">
+                  <label class="theme-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <span class="slider"></span>
+                  </label>
+            </div>
             <div class="sidebar">
-                  <button class="new-chat-button">+ New Chat</button>
+                  <div class="project-name">
+                        <div class="project-title">AI PPT maker</div>
+                        <button class="new-session-button">
+                              <img src="/static/images/session-icons/plus.svg" class="new-session-icon">
+                        </button>
+                  </div>
                   <div class="recent-chats">
                         <p>Recent Chat</p>
                         <a href="#" class="clear-all" onclick="clearAllChats()">Clear All</a>
                   </div>
                   <ul class="session-list" id="session-list">
-                        {% for session_id, first_prompt in previous_session_meta_data.items() %}
+                        {% for session_id, meta_data in previous_session_meta_data.items() %}
                         <li class="chat-item" session_id="{{ session_id }}" onclick="loadSessionData('{{ session_id }}')">
-                            <div class="chat-item-question">{{ first_prompt }}</div>
-                            <div class="chat-item-delete-container">
-                                <img src="/static/images/delete black.png" class="delete-button" onclick="event.stopPropagation(); deleteSession('{{ session_id }}')">
+                            <div class="chat-item-emoji">
+                                <img src="/static/images/session-icons/{{ meta_data.session_icon }}" class="emoji-button">
                             </div>
+                            <div class="chat-item-question">{{ meta_data.prompt }}</div>
+                            <div class="chat-item-delete-container">
+                                <img src="/static/images/delete_black.svg" class="delete-button" onclick="event.stopPropagation(); deleteSession('{{ session_id }}')">
+                            </div>
+                            <div class="chat-item-indicator"></div>
                         </li>
                         {% endfor %}
                     </ul>
+                    
                     
             </div>
             <div class="container">
@@ -34,9 +50,14 @@
                         <div class="input-bar">
                               <div id="userInput" class="input-box" contenteditable="true" placeholder="Type your message..." onkeypress="handleKeyPress(event)" onpaste="handlePaste(event)"></div>
                         </div>
-                        <button id="sendButton" class="send-button" onclick="sendMessageFromInputBar()">
-                              <img class="send-icon" id="sendIcon" src="{{ url_for('static', filename='images/send.png') }}" />
-                        </button>
+                        <div class="input-options">
+                              <button class="mic-button">
+                                    <img class="mic-icon"src="{{ url_for('static', filename='images/mic.svg') }}" />
+                              </button>
+                              <button id="sendButton" class="send-button" onclick="sendMessageFromInputBar()">
+                                    <img class="send-icon" id="sendIcon" src="{{ url_for('static', filename='images/arrow-left.svg') }}" />
+                              </button>
+                        </div>
                   </div>
             </div>
 

@@ -52,6 +52,7 @@ def generate_slides():
         
         # slide_planning = messages[-2]['content'] # testing
         slide_planning = utils.invoke_llm(messages)
+        session_icon = utils.get_session_icon(session_id)
         logger.info(slide_planning)
         slides_content = []
         for slide_details in json.loads(slide_planning)['slide_details']:
@@ -72,7 +73,7 @@ def generate_slides():
             
             slides_content.append(json.loads(single_slide_content))
         
-        return jsonify({'slides_content': slides_content, 'slide_planning': slide_planning}), 200
+        return jsonify({'slides_content': slides_content, 'slide_planning': slide_planning, 'session_icon' : session_icon}), 200
 
     except Exception as e:
         # Print the exception traceback to the console
@@ -205,9 +206,10 @@ def update_session():
     session_id      = data.get('session_id')
     prompt          = data.get('prompt')
     slide_planning  = data.get('slide_planning')
+    session_icon  = data.get('session_icon')
     slides_content  = json.dumps(data.get('slides_content'))
 
-    utils.session_utils.add_slides(session_id, prompt, slide_planning, slides_content)
+    utils.session_utils.add_slides(session_id, prompt, slide_planning, slides_content, session_icon)
 
     return jsonify({"success" : True})
 

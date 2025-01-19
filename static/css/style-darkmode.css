@@ -3,6 +3,7 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  background-color: #f1f7ff;
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -60,10 +61,10 @@ html {
 }
 
 .chat-container {
-  width: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .message {
@@ -277,7 +278,8 @@ html {
   padding-left: 5px
 }
 
-.chat-item:hover {}
+.chat-item:hover {
+}
 
 .delete-button {
   color: #ffffff;
@@ -324,7 +326,8 @@ html {
   opacity: 1
 }
 
-.chat-item:hover {}
+.chat-item:hover {
+}
 
 .chat-item:hover .emoji-button {
   opacity: 1;
@@ -591,6 +594,15 @@ html {
   color: #ff0000
 }
 
+.chat-item-question:after {
+  content: '...';
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+  background: #FFFFFF;
+  display: block
+}
+
 .project-name {
   display: flex;
   justify-content: space-between;
@@ -617,308 +629,17 @@ html {
   height: 30px;
   padding: 5px;
 }
-
-.bot-loading-message-container {
+.bot-loading-message-container{
   width: 50px;
   aspect-ratio: 1;
   border-radius: 50%;
-  background:
-    radial-gradient(farthest-side, #2061B7 94%, #0000) top/8px 8px no-repeat,
-    conic-gradient(#0000 30%, #2061B7);
-  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  background: 
+    radial-gradient(farthest-side,#2061B7 94%,#0000) top/8px 8px no-repeat,
+    conic-gradient(#0000 30%,#2061B7);
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
   animation: l13 1s infinite linear;
   margin: 46px;
 }
-
-@keyframes l13 {
-  100% {
-    transform: rotate(1turn)
-  }
-}
-.color-mode-toggle-container{position: fixed;right: 0px;margin: 24px;text-align: center;align-items: center;display: flex;gap: 10px;flex-direction: column;font-size: 12px;}
-/* iOS-style toggle switch */
-.theme-switch {
-  position: relative;
-  display: inline-block;
-  width: 51px;
-  height: 26px;
-}
-
-.theme-switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 26px;
-}
-
-.slider:before {
-  position: absolute;
-  content: '';
-  height: 20px;
-  width: 20px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: #2061B7;
-}
-
-input:checked + .slider:before {
-  transform: translateX(24px);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* --------------------------------- */
-/* Dark Mode */
-.dark-mode p {
-  color: #ffffff;
-}
-
-.dark-mode a:link,
-.dark-mode a:visited,
-.dark-mode a:hover,
-.dark-mode a:active {
-  color: #b6b6b6;
-}
-.dark-mode body {
-  background-color: #252525;
-}
-
-.dark-mode .input-container {
-  border: 2px solid #404040;
-  background-color: #353535;
-}
-
-.dark-mode .input-box {
-  color: #ffffff;
-}
-
-.dark-mode .sidebar {
-  background-color: #121111;
-  color: white;
-}
-
-.dark-mode .chat-item:hover {
-  background-color: #6f6f6f;
-}
-
-.dark-mode .chat-item:hover .emoji-button {
-  filter: invert(0);
-}
-
-.dark-mode .emoji-button {
-  filter: invert(1);
-}
-
-.dark-mode .slide {
-  background: #121111;
-  border: 1px solid #8c8c8c;
-}
-
-.dark-mode .slide-title {
-  color: #c3c3c3;
-}
-
-.dark-mode .long-title {
-  color: #ffffff;
-}
-
-.dark-mode .sub-title {
-  color: #ebebeb;
-}
-
-.dark-mode .point-heading {
-  color: #e4e4e4;
-}
-
-.dark-mode .point-content {
-  color: #b6b6b6;
-}
-
-.dark-mode .slide-number {
-  background: #121111;
-  border: 1px solid #8c8c8c;
-  color: #ffffff;
-}
-
-.dark-mode .copy-button,
-.dark-mode .download-button {
-  filter: invert(1);
-}
-
-.dark-mode .image-container {
-  background-color: #313131;
-}
-
-.dark-mode .image-container:hover {
-  box-shadow: 0 4px 8px rgb(255 255 255 / 20%);
-}
-
-.dark-mode .popup-container {
-  background-color: #1d1d1d;
-}
-
-.dark-mode .download-image-button {
-  filter: invert(1);
-}
-
-.dark-mode .new-session-icon {
-  filter: invert(1);
-}
-
-/* --------------------------------- */
-/* Light Mode */
-.light-mode p {
-  color: #000000;
-}
-
-.light-mode a:link,
-.light-mode a:visited,
-.light-mode a:hover,
-.light-mode a:active {
-  color: #000000;
-}
-
-.light-mode body {
-  background-color: #ffffff;
-}
-
-.light-mode .input-container {
-  border: 2px solid #ccc;
-  background-color: #ffffff;
-}
-
-.light-mode .input-box {
-  color: #000;
-}
-
-.light-mode .sidebar {
-  background-color: #f8fafc;
-  color: #000;
-}
-
-.light-mode .chat-item:hover {
-  background-color: #eef2ff;
-}
-
-.light-mode .chat-item:hover {
-  color: #2c2c2c;
-}
-
-/* .light-mode .chat-item:hover .emoji-button {
-  filter: invert(1);
-} */
-
-.light-mode .emoji-button {
-  filter: invert(0);
-}
-
-.light-mode .slide {
-  background: #f6f8ff;
-  border: 1px solid #d2dcff;
-}
-
-.light-mode .slide-title {
-  color: #666;
-}
-
-.light-mode .long-title {
-  color: #333;
-}
-
-.light-mode .sub-title {
-  color: #888;
-}
-
-.light-mode .point-heading {
-  color: #444;
-}
-
-.light-mode .slide-number {
-  background: #f6f8ff;
-  border: 1px solid #d2dcff;
-  color: #000;
-}
-
-.light-mode .copy-button,
-.light-mode .download-button {
-  filter: invert(0);
-}
-
-.light-mode .image-container {
-  background-color: #ffffff;
-}
-
-.light-mode .image-container:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.light-mode .popup-container {
-  background-color: #ffffff;
-}
-
-.light-mode .download-image-button {
-  filter: invert(0);
-}
-
-.light-mode .new-session-icon {
-  filter: invert(0);
+@keyframes l13{ 
+  100%{transform: rotate(1turn)}
 }

@@ -6,8 +6,31 @@ window.onload = function () {
   document.getElementById("slides-container").innerHTML = "";
 };
 
-document.querySelector(".new-chat-button").addEventListener("click", function () {
+document.querySelector(".new-session-button").addEventListener("click", function () {
   location.reload(); // Refresh the page
+});
+
+const toggleThemeButton = document.getElementById('theme-toggle');
+
+// Load the preferred theme from localStorage
+const currentTheme = localStorage.getItem('theme') || 'light-mode';
+document.documentElement.classList.add(currentTheme); // Apply theme to the html tag
+toggleThemeButton.textContent = currentTheme === 'dark-mode' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+
+// Toggle theme on button click
+toggleThemeButton.addEventListener('click', () => {
+  const html = document.documentElement; // Target the html element
+  if (html.classList.contains('dark-mode')) {
+    html.classList.replace('dark-mode', 'light-mode');
+    toggleThemeButton.textContent = 'Switch to Dark Mode';
+    localStorage.setItem('theme', 'light-mode');
+    html.style.backgroundColor = "#ffffff"; // Apply background color to html
+  } else {
+    html.classList.replace('light-mode', 'dark-mode');
+    toggleThemeButton.textContent = 'Switch to Light Mode';
+    localStorage.setItem('theme', 'dark-mode');
+    html.style.backgroundColor = "#252525"; // Apply background color to html
+  }
 });
 
 
@@ -80,7 +103,6 @@ function slideLoadingAnimation() {
   const chatContainer = document.getElementById("slides-container");
   const loadingMessageContainer = document.createElement("div");
   loadingMessageContainer.classList.add("bot-loading-message-container");
-  loadingMessageContainer.textContent = "Creating slides...";
   loadingMessageContainer.id = "slide-loading-animation";
   chatContainer.appendChild(loadingMessageContainer);
   chatContainer.scrollTop = chatContainer.scrollHeight;
@@ -97,7 +119,7 @@ function resetSendButton() {
 
   userInput.setAttribute("contenteditable", "true");
   sendButton.disabled = false;
-  sendIcon.src = "static/images/send.png";
+  sendIcon.src = "static/images/arrow-left.svg";
   sendIcon.onclick = null; // Remove the stopStream function from the click event
 }
 
@@ -105,8 +127,8 @@ function cleanInput() {
   const userInput = document.getElementById("userInput");
   userInput.innerHTML = userInput.innerHTML.replace(/<span[^>]*>(.*?)<\/span>/g, "$1");
 }
-// Function to update the sidebar with the new session at the top
-function updateSidebarWithSession(sessionId, firstQuestion) {
+
+function updateSidebarWithSession(sessionId, firstQuestion, session_icon) {
   const sessionList = document.getElementById("session-list");
 
   // Create the list item for the session
@@ -114,6 +136,18 @@ function updateSidebarWithSession(sessionId, firstQuestion) {
   sessionItem.className = "chat-item"; // Set the class name
   sessionItem.setAttribute("session_id", sessionId); // Set the session_id attribute
   sessionItem.onclick = () => loadSessionData(sessionId); // Click handler for the session item
+
+  // Create a div for the emoji container
+  const emojiDiv = document.createElement("div");
+  emojiDiv.className = "chat-item-emoji"; // Set a class for styling
+
+  // Create the emoji image
+  const emojiImage = document.createElement("img");
+  emojiImage.className = "emoji-button"; // Add a class for styling
+  emojiImage.src = `/static/images/session-icons/${session_icon}`; // Use backticks for template literals
+
+  // Append the emoji image to the emoji container
+  emojiDiv.appendChild(emojiImage);
 
   // Create a div for the session text
   const sessionTextDiv = document.createElement("div");
@@ -127,7 +161,7 @@ function updateSidebarWithSession(sessionId, firstQuestion) {
   // Create the delete icon
   const deleteIcon = document.createElement("img");
   deleteIcon.className = "delete-button"; // Add a class for styling
-  deleteIcon.src = "/static/images/delete black.png"; // Set the source of the delete icon
+  deleteIcon.src = "/static/images/delete_black.svg"; // Set the source of the delete icon
   deleteIcon.alt = "Delete"; // Set an alt text for accessibility
   deleteIcon.onclick = (e) => {
     e.stopPropagation(); // Prevent triggering the `onclick` for the session item
@@ -137,13 +171,20 @@ function updateSidebarWithSession(sessionId, firstQuestion) {
   // Append the delete icon to the delete icon container
   deleteIconDiv.appendChild(deleteIcon);
 
-  // Append the text div and delete icon container to the session item
-  sessionItem.appendChild(sessionTextDiv);
-  sessionItem.appendChild(deleteIconDiv);
+  // Create a div for the session indicator
+  const indicatorDiv = document.createElement("div");
+  indicatorDiv.className = "chat-item-indicator"; // Set a class for styling
+
+  // Append all child elements to the session item
+  sessionItem.appendChild(emojiDiv); // Add the emoji container
+  sessionItem.appendChild(sessionTextDiv); // Add the session text container
+  sessionItem.appendChild(deleteIconDiv); // Add the delete icon container
+  sessionItem.appendChild(indicatorDiv); // Add the session indicator
 
   // Insert the new session item at the top of the list
   sessionList.insertBefore(sessionItem, sessionList.firstChild);
 }
+
 
 
 
@@ -365,18 +406,14 @@ async function generateSlides(message) {
 
   if (message === "") return;
 
-  if (!currentSessionId) {
-    currentSessionId = generateSessionId(); // Generate a new session ID
-    updateSidebarWithSession(currentSessionId, message); // Update the sidebar with the new session
-  }
-
+  
   userInput.setAttribute("contenteditable", "false");
   sendButton.disabled = true;
-
+  
   // Append the user message block
   appendUserMessage(message);
   userInput.innerText = "";
-
+  
   // Show a loading animation
   slideLoadingAnimation();
 
@@ -391,18 +428,22 @@ async function generateSlides(message) {
         user_input: message,
       }),
     });
-
+    
     if (!responseAgent.ok) {
       console.error("Error:", responseAgent.statusText);
       // Show error message to user
       return;
     }
-
+    
     // Parse the JSON response
     const responseData = await responseAgent.json();
-
+    
     // Check if slides_content exists in the response
     if (responseData.slides_content) {
+      if (!currentSessionId) {
+        currentSessionId = generateSessionId(); // Generate a new session ID
+        updateSidebarWithSession(currentSessionId, message, responseData.session_icon); // Update the sidebar with the new session
+      }
       // Send a request to /update_session route.
       await fetch("/update_session", {
         method: "POST",
@@ -412,6 +453,7 @@ async function generateSlides(message) {
           prompt: message, // Assuming the prompt is the user message
           slide_planning: responseData.slide_planning,
           slides_content: responseData.slides_content,
+          session_icon: responseData.session_icon,
         }),
       });
       // Render all slides
