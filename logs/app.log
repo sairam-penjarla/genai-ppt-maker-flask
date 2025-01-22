@@ -4247,3 +4247,109 @@ sqlite3.OperationalError: 4 values for 5 columns
 2025-01-20 03:39:40,820 - INFO - 127.0.0.1 - - [20/Jan/2025 03:39:40] "[36mGET /static/thumbnails/Presentation5.png HTTP/1.1[0m" 304 -
 2025-01-20 03:39:40,868 - INFO - 127.0.0.1 - - [20/Jan/2025 03:39:40] "[36mGET /static/thumbnails/Presentation1.png HTTP/1.1[0m" 304 -
 2025-01-20 03:39:40,873 - INFO - 127.0.0.1 - - [20/Jan/2025 03:39:40] "[36mGET /static/thumbnails/Presentation4.png HTTP/1.1[0m" 304 -
+2025-01-20 03:41:55,819 - INFO - Retrieving slide data for session: 691ac3c1-555a-4e22-ae07-9101adc84387
+2025-01-20 03:41:55,819 - INFO - Retrieved 1 entries for session_id: 691ac3c1-555a-4e22-ae07-9101adc84387
+2025-01-20 03:41:55,820 - INFO - 127.0.0.1 - - [20/Jan/2025 03:41:55] "POST /get_session_data HTTP/1.1" 200 -
+2025-01-20 03:42:28,591 - INFO - Retrieving slide data for session: abb2c177-9f69-442e-92ba-844aa370ceb2
+2025-01-20 03:42:28,593 - INFO - Retrieved 1 entries for session_id: abb2c177-9f69-442e-92ba-844aa370ceb2
+2025-01-20 03:42:28,593 - INFO - 127.0.0.1 - - [20/Jan/2025 03:42:28] "POST /get_session_data HTTP/1.1" 200 -
+2025-01-20 03:42:41,100 - INFO - Retrieving slide data for session: fb4f238b-5260-4e42-adee-4b9e0777adcc
+2025-01-20 03:42:41,100 - INFO - Retrieved 1 entries for session_id: fb4f238b-5260-4e42-adee-4b9e0777adcc
+2025-01-20 03:42:41,101 - INFO - 127.0.0.1 - - [20/Jan/2025 03:42:41] "POST /get_session_data HTTP/1.1" 200 -
+2025-01-23 02:35:01,134 - INFO - Connected to the database: sessions.db
+2025-01-23 02:35:01,134 - INFO - Creating tables if they don't exist...
+2025-01-23 02:35:01,142 - INFO - Tables created or already exist.
+2025-01-23 02:35:01,233 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.101:8000
+2025-01-23 02:35:01,233 - INFO - [33mPress CTRL+C to quit[0m
+2025-01-23 02:35:03,471 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:03] "GET / HTTP/1.1" 200 -
+2025-01-23 02:35:04,531 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:04] "[36mGET /static/images/session-icons/paw-print.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:04,538 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-01-23 02:35:04,542 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:04] "[36mGET /static/images/session-icons/plus.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:04,543 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:04] "[36mGET /static/css/markdown_styles.css HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,454 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/images/delete_black.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,460 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/images/session-icons/bone.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,469 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,485 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/images/session-icons/tree-deciduous.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,492 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/images/session-icons/shell.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,494 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/images/session-icons/vegan.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,503 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/images/session-icons/rabbit.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,508 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/images/session-icons/cat.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,521 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/images/session-icons/bird.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,523 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/images/session-icons/leaf.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,526 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/images/session-icons/flower.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,533 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/images/mic.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:05,541 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:05] "[36mGET /static/images/arrow-left.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:35:06,053 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-23 02:35:20,175 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:20] "[36mGET /static/css/markdown_styles.css HTTP/1.1[0m" 304 -
+2025-01-23 02:35:20,175 - INFO - 127.0.0.1 - - [23/Jan/2025 02:35:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-01-23 02:40:23,625 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:23] "GET / HTTP/1.1" 200 -
+2025-01-23 02:40:23,831 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:23] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-01-23 02:40:23,898 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:23] "GET /static/images/session-icons/plus.svg HTTP/1.1" 200 -
+2025-01-23 02:40:23,923 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:23] "GET /static/css/markdown_styles.css HTTP/1.1" 200 -
+2025-01-23 02:40:23,940 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:23] "GET /static/images/session-icons/bone.svg HTTP/1.1" 200 -
+2025-01-23 02:40:23,941 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:23] "GET /static/images/delete_black.svg HTTP/1.1" 200 -
+2025-01-23 02:40:23,959 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:23] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-01-23 02:40:23,973 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:23] "GET /static/images/session-icons/paw-print.svg HTTP/1.1" 200 -
+2025-01-23 02:40:23,978 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:23] "GET /static/images/session-icons/rabbit.svg HTTP/1.1" 200 -
+2025-01-23 02:40:24,002 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:24] "GET /static/images/session-icons/shell.svg HTTP/1.1" 200 -
+2025-01-23 02:40:24,004 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:24] "GET /static/images/session-icons/tree-deciduous.svg HTTP/1.1" 200 -
+2025-01-23 02:40:24,021 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:24] "GET /static/images/mic.svg HTTP/1.1" 200 -
+2025-01-23 02:40:24,022 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:24] "GET /static/images/session-icons/cat.svg HTTP/1.1" 200 -
+2025-01-23 02:40:24,021 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:24] "GET /static/images/session-icons/vegan.svg HTTP/1.1" 200 -
+2025-01-23 02:40:24,025 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:24] "GET /static/images/arrow-left.svg HTTP/1.1" 200 -
+2025-01-23 02:40:24,042 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:24] "GET /static/images/session-icons/leaf.svg HTTP/1.1" 200 -
+2025-01-23 02:40:24,042 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:24] "GET /static/images/session-icons/bird.svg HTTP/1.1" 200 -
+2025-01-23 02:40:24,043 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:24] "GET /static/images/session-icons/flower.svg HTTP/1.1" 200 -
+2025-01-23 02:40:24,881 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-23 02:40:40,526 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-01-23 02:40:40,532 - INFO - 127.0.0.1 - - [23/Jan/2025 02:40:40] "[36mGET /static/css/markdown_styles.css HTTP/1.1[0m" 304 -
+2025-01-23 02:41:47,628 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET / HTTP/1.1" 200 -
+2025-01-23 02:41:47,761 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-01-23 02:41:47,813 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/css/markdown_styles.css HTTP/1.1" 200 -
+2025-01-23 02:41:47,818 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/session-icons/plus.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,893 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-01-23 02:41:47,894 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/session-icons/bone.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,894 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/session-icons/paw-print.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,906 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/delete_black.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,912 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/mic.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,917 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/session-icons/tree-deciduous.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,921 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/arrow-left.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,939 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/session-icons/shell.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,940 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/session-icons/vegan.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,946 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/session-icons/rabbit.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,948 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/session-icons/cat.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,948 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/session-icons/leaf.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,949 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/session-icons/bird.svg HTTP/1.1" 200 -
+2025-01-23 02:41:47,976 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:47] "GET /static/images/session-icons/flower.svg HTTP/1.1" 200 -
+2025-01-23 02:41:48,799 - INFO - 127.0.0.1 - - [23/Jan/2025 02:41:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-23 02:43:37,187 - INFO - Retrieving slide data for session: 691ac3c1-555a-4e22-ae07-9101adc84387
+2025-01-23 02:43:37,188 - INFO - Retrieved 1 entries for session_id: 691ac3c1-555a-4e22-ae07-9101adc84387
+2025-01-23 02:43:37,191 - INFO - 127.0.0.1 - - [23/Jan/2025 02:43:37] "POST /get_session_data HTTP/1.1" 200 -
+2025-01-23 02:43:37,205 - INFO - 127.0.0.1 - - [23/Jan/2025 02:43:37] "[36mGET /static/images/copy.png HTTP/1.1[0m" 304 -
+2025-01-23 02:43:37,209 - INFO - 127.0.0.1 - - [23/Jan/2025 02:43:37] "[36mGET /static/images/download.png HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,251 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "GET / HTTP/1.1" 200 -
+2025-01-23 02:45:12,340 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/css/markdown_styles.css HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,354 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,363 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-01-23 02:45:12,417 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/session-icons/plus.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,446 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/session-icons/bone.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,455 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/session-icons/paw-print.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,457 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/delete_black.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,464 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/session-icons/shell.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,468 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/session-icons/tree-deciduous.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,475 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/mic.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,481 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/session-icons/flower.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,489 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/session-icons/bird.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,497 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/arrow-left.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,499 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/session-icons/leaf.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,515 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/session-icons/vegan.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,515 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/session-icons/cat.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:12,520 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:12] "[36mGET /static/images/session-icons/rabbit.svg HTTP/1.1[0m" 304 -
+2025-01-23 02:45:43,138 - INFO - Retrieving slide data for session: 39be7c98-8545-41fc-9b21-b35fba03a423
+2025-01-23 02:45:43,138 - INFO - Retrieved 1 entries for session_id: 39be7c98-8545-41fc-9b21-b35fba03a423
+2025-01-23 02:45:43,139 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:43] "POST /get_session_data HTTP/1.1" 200 -
+2025-01-23 02:45:43,160 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:43] "[36mGET /static/images/copy.png HTTP/1.1[0m" 304 -
+2025-01-23 02:45:43,160 - INFO - 127.0.0.1 - - [23/Jan/2025 02:45:43] "[36mGET /static/images/download.png HTTP/1.1[0m" 304 -
