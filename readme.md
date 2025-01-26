@@ -127,7 +127,7 @@ The **GenAI PowerPoint Maker** helps users generate PowerPoint slides effortless
 ## 📖 Learn More
 
 For a detailed walkthrough of the project, visit the blog post:  
-[GenAI PowerPoint Maker - Blog Article](https://psairam9301.wixsite.com/website/post/gen-ai-ppt-maker)
+[GenAI PowerPoint Maker - Blog Article](https://sairampenjarla.notion.site/Gen-AI-PPT-Maker-187d56a2fc2780da9d7ce24357e377a0)
 
 ---
 
