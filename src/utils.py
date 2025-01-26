@@ -11,8 +11,6 @@ import random
 
 
 load_dotenv()
-TOKEN = os.getenv('DATABRICKS_TOKEN')
-HOST = os.getenv("DATABRICKS_HOST")
 
 class Utilities:
     def __init__(self):
@@ -20,10 +18,7 @@ class Utilities:
         self.config = get_config()
         self.session_utils = sessionUtilities()
 
-        self.client = OpenAI(
-            api_key=TOKEN,
-            base_url=f"{HOST}/serving-endpoints"
-        )
+        self.client = OpenAI()
     
     def get_session_icon(self, session_id):
         icon_name = self.session_utils.get_session_icon(session_id)

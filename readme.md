@@ -1,79 +1,136 @@
+
 # [![Website](https://img.shields.io/badge/Website-Visit-brightgreen)](https://psairam9301.wixsite.com/website) [![YouTube](https://img.shields.io/badge/YouTube-Subscribe-red)](https://www.youtube.com/@sairampenjarla) [![GitHub](https://img.shields.io/badge/GitHub-Explore-black)](https://github.com/sairam-penjarla) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/sairam-penjarla-b5041b121/) [![Instagram](https://img.shields.io/badge/Instagram-Follow-ff69b4)](https://www.instagram.com/sairam.ipynb/)
 
-# Gen AI PPT Maker
+# GenAI PowerPoint Maker
 
-## Project Overview
-Gen AI PPT Maker is a powerful AI-driven tool that enables users to create professional presentations effortlessly. Users can specify their requirements, such as the number of slides, the desired content for each slide, and even select slide designs. The AI generates customized slides as per the inputs, allowing users to preview and download individual slides with chosen designs. The project leverages OpenAI's GPT technology, Flask, HTML, CSS, JS, and SQLite for seamless functionality.
+An AI-powered agent designed to create PowerPoint presentations efficiently based on user-provided prompts.
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
-Follow the instructions below to set up and run the project on your local machine.
+### Clone the Repository
 
-### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/sairam-penjarla/genai-ppt-maker-flask
+git clone https://github.com/sairam-penjarla/genai-ppt-maker-flask.git
+cd genai-ppt-maker-flask
 ```
 
-### Step 2: Navigate to the Project Directory
+### Set Up the Environment
+
+Follow this guide to create a virtual or Anaconda environment: [Link to Blog Post](https://sairampenjarla.notion.site/Environment-171d56a2fc2780dd9efcd4cef331fa2c).
+
+#### Virtual Environment Setup
+
 ```bash
-cd genAI-ppt-maker-flask-
+# Create a virtual environment
+python -m venv env
+
+# Activate the environment
+# Windows:
+env\Scripts\activate
+# MacOS/Linux:
+source env/bin/activate
 ```
 
-### Step 3: Set Up the Environment
-To learn how to create a virtual environment, check out this [blog post](https://psairam9301.wixsite.com/website/post/learn-virtualenv-basics).
+#### Install Dependencies
 
-#### Using `virtualenv` (Recommended)
-```bash
-python3 -m venv env
-source env/bin/activate  # For Linux/Mac
-env\Scripts\activate    # For Windows
-```
-
-#### Using Anaconda
-```bash
-conda create -n genai-ppt-maker python=3.9
-conda activate genai-ppt-maker
-```
-
-### Step 4: Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 5: Add Your OpenAI API Token
-1. Create a `.env` file in the root directory.
-2. Add the following line to the file:
-   ```env
-   OPENAI_API_TOKEN=your_openai_api_key_here
-   ```
+#### Add API Key
 
-### Step 6: Run the Project
+- Create a `.env` file in the root directory.
+- Add your OpenAI API key:
+
+```env
+OPENAI_API_KEY=your_openai_api_key
+```
+
+### Run the Application
+
 ```bash
 python app.py
 ```
 
-### Step 7: Access the Application
-Open your browser and navigate to:
-```text
-http://127.0.0.1:5000/
-```
+Navigate to `http://127.0.0.1:5000` in your browser.
 
 ---
 
-## Features and Functionality
+## 📚 About the Project
 
-- **AI-Powered Slide Creation:** Specify the number of slides and detailed content for each slide, and let the AI generate them for you.
-- **Slide Design Options:** Choose from a catalog of designs, and download individual slides as PPT files with the selected design and text.
-- **Session Management:** View past sessions in the sidebar for quick access and reference.
-- **Logging:** Logs are stored in the `app.log` file for troubleshooting and monitoring purposes.
-- **OpenAI Integration:** Utilize OpenAI's GPT model for generating content dynamically.
-- **Tech Stack:** Flask for backend, HTML/CSS/JS for frontend, and SQLite for database management.
+### Purpose
+
+The **GenAI PowerPoint Maker** helps users generate PowerPoint slides effortlessly using simple prompts. The goal is to save time and streamline the process of creating professional presentations.
+
+### Features
+
+- **AI-Powered Slide Creation**: Enter a prompt to generate slides automatically.
+- **Pre-designed Templates**: Choose from five pre-made templates to download slides.
+- **Session Management**: Save, view, and delete previous sessions from the sidebar.
+- **Dark/Light Mode Toggle**: Aesthetic toggle between light and dark themes.
+- **Loading Animations**: Displays a circular loading animation during processing.
+- **Streamed Responses**: Real-time word-by-word generation for better user experience.
+- **Input Validation**: Detects and responds appropriately to irrelevant or inappropriate prompts using advanced prompt engineering.
+- **Download Functionality**: Download individual slides in `.pptx` format.
+- **Responsive Design**: Optimized for a seamless user experience.
+- **Logging and Structured Code**: Includes detailed logs, comments, and a clear project structure.
+
+### Key Components
+
+- **Backend**: Flask, OpenAI API, `python-pptx` for PowerPoint file handling.
+- **Frontend**: HTML, CSS, JavaScript (Lucide icons for aesthetics).
+- **Environment Configuration**: `dotenv` for managing API keys.
+- **Architecture Diagram**: Detailed overview available in the `media` folder.
 
 ---
 
-## Additional Resources
+## 🖼️ Screenshots
 
-- [Project Blog Post](https://psairam9301.wixsite.com/website/post/project-blog-gen-ai-ppt-maker)
-- [YouTube Video](https://www.youtube.com/@sairampenjarla)
+1. **Loading Animation**  
+   ![Screenshot](media/screenshot_2.png)  
+   Shows a circular loading animation after submitting a prompt.
+
+2. **Generated Slides**  
+   ![Screenshot](media/screenshot_1.png)  
+   Example of AI-generated slides.
+
+3. **Dark Mode Loading Animation**  
+   ![Screenshot](media/screenshot_3.png)  
+
+4. **Pre-made Templates**  
+   ![Screenshot](media/screenshot_5.png)  
+
+5. **Slides in Dark Mode**  
+   ![Screenshot](media/screenshot_4.png)  
+
+6. **Session Management**  
+   ![Screenshot](media/screenshot_6.png)  
+
+---
+
+## 📂 Architecture Diagram
+
+![Architecture Diagram](media/architecture%20Diagram.png)
+
+### Description
+
+- **User Interaction**: Users send prompts through the UI.
+- **API Calls**: Requests are routed through Flask APIs (`/generate_slides`, `/download_slide`, etc.).
+- **OpenAI Integration**: Generates slide content using advanced prompt engineering and multi-shot learning.
+- **Download Slide Workflow**: Fetches pre-designed templates, applies user-selected designs, and returns `.pptx` files.
+- **Session Management**: Stores sessions in a structured format with icons for easy identification.
+
+---
+
+## 📖 Learn More
+
+For a detailed walkthrough of the project, visit the blog post:  
+[GenAI PowerPoint Maker - Blog Article](https://psairam9301.wixsite.com/website/post/gen-ai-ppt-maker)
+
+---
+
+## 🌟 Contributions
+
+Feel free to fork this repository and submit pull requests for improvements. Suggestions and feedback are always welcome!
