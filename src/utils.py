@@ -8,8 +8,6 @@ from src.multi_shot_examples import get_exmaples
 import os
 import random
 
-
-
 load_dotenv()
 
 class Utilities:
@@ -18,7 +16,13 @@ class Utilities:
         self.config = get_config()
         self.session_utils = sessionUtilities()
 
-        self.client = OpenAI()
+        TOKEN = os.environ.get('TOKEN')
+        HOST = os.environ.get('HOST')
+        self.client = OpenAI(
+            api_key = TOKEN,
+            base_url = f"{HOST}/serving-endpoints"
+        )
+
     
     def get_session_icon(self, session_id):
         icon_name = self.session_utils.get_session_icon(session_id)
