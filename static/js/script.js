@@ -3,7 +3,7 @@ let currentSessionId = null;
 
 window.onload = function () {
   // Clear chat container on page load
-  document.getElementById("slides-container").innerHTML = "";
+  // document.getElementById("slides-container").innerHTML = "";
 };
 
 document.querySelector(".new-session-button").addEventListener("click", function () {
@@ -13,7 +13,7 @@ document.querySelector(".new-session-button").addEventListener("click", function
 const toggleThemeButton = document.getElementById('theme-toggle');
 
 // Load the preferred theme from localStorage
-const currentTheme = localStorage.getItem('theme') || 'light-mode';
+const currentTheme = localStorage.getItem('theme') || 'darks-mode';
 document.documentElement.classList.add(currentTheme); // Apply theme to the html tag
 toggleThemeButton.textContent = currentTheme === 'dark-mode' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
 
@@ -368,6 +368,11 @@ function renderSession(sessionData, sessionId) {
 
 function appendUserMessage(content) {
   const chatContainer = document.getElementById("slides-container");
+  const welcomeContainer = document.getElementById("welcome-container");
+
+  if (welcomeContainer) {
+    welcomeContainer.style.display = 'none';
+  }
 
   const messageContainer = document.createElement("div");
   messageContainer.classList.add("user-message-container");
@@ -573,7 +578,7 @@ function renderSingleSlide(slideData, slideNumber) {
   // Create copy button as an image
   const copyButton = document.createElement("img");
   copyButton.className = "copy-button";
-  copyButton.src = "static/images/copy.png";
+  copyButton.src = "static/images/copy.svg";
   copyButton.alt = "Copy";
   copyButton.style.cursor = "pointer"; // Ensure it looks clickable
   copyButton.onclick = () => {
@@ -596,7 +601,7 @@ function renderSingleSlide(slideData, slideNumber) {
   // Create download button as an image
   const downloadButton = document.createElement("img");
   downloadButton.className = "download-button";
-  downloadButton.src = "static/images/download.png";
+  downloadButton.src = "static/images/download.svg";
   downloadButton.alt = "Download";
   downloadButton.style.cursor = "pointer"; // Ensure it looks clickable
   downloadButton.onclick = () => displayDownloadPopup(slideData);
@@ -645,7 +650,7 @@ function displayDownloadPopup(slideData) {
 
         const downloadImageButton = document.createElement("img");
         downloadImageButton.className = "download-image-button";
-        downloadImageButton.src = "static/images/download.png";
+        downloadImageButton.src = "static/images/download.svg";
         downloadImageButton.alt = "Download"; // Alt text for accessibility
         downloadImageButton.title = "Download"; // Tooltip when hovered
         downloadImageButton.style.cursor = "pointer"; // Ensure it looks clickable

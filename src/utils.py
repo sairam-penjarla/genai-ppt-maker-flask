@@ -16,12 +16,7 @@ class Utilities:
         self.config = get_config()
         self.session_utils = sessionUtilities()
 
-        TOKEN = os.environ.get('TOKEN')
-        HOST = os.environ.get('HOST')
-        self.client = OpenAI(
-            api_key = TOKEN,
-            base_url = f"{HOST}/serving-endpoints"
-        )
+        self.client = OpenAI()
 
     
     def get_session_icon(self, session_id):

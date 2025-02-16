@@ -19,10 +19,13 @@
             <div class="sidebar">
                   <div class="project-name">
                         <div class="project-title">AI PPT maker</div>
-                        <button class="new-session-button">
-                              <img src="/static/images/session-icons/plus.svg" class="new-session-icon">
-                        </button>
                   </div>
+                  <button class="new-session-button">
+                        <img src="/static/images/create.svg" class="new-session-icon">
+                        <div class="new-session-text">
+                              Begin a New Chat
+                        </div>
+                  </button>
                   <div class="recent-chats">
                         <p>Recent Chat</p>
                         <a href="#" class="clear-all" onclick="clearAllChats()">Clear All</a>
@@ -35,7 +38,7 @@
                             </div>
                             <div class="chat-item-question">{{ meta_data.prompt }}</div>
                             <div class="chat-item-delete-container">
-                                <img src="/static/images/delete_black.svg" class="delete-button" onclick="event.stopPropagation(); deleteSession('{{ session_id }}')">
+                                <img src="/static/images/delete.svg" class="delete-button" onclick="event.stopPropagation(); deleteSession('{{ session_id }}')">
                             </div>
                             <div class="chat-item-indicator"></div>
                         </li>
@@ -45,7 +48,35 @@
                     
             </div>
             <div class="container">
-                  <div class="chat-container hide-scrollbar" id="slides-container"></div>
+                    <div class="chat-container hide-scrollbar" id="slides-container">
+                        <div id="welcome-container">
+                              <div class="welcome-container">
+                                      <h1>How can we <span class="gradient-text">assist</span> you today?</h1>
+                                      <p class="subtext">
+                                  Get expert guidance powered by AI agents specializing in Sales, Marketing, and Negotiation. 
+                                  Choose the agent that suits your needs and start your conversation with ease.
+                              </p>
+                      
+                              <div class="cards">
+                                  <div class="card">
+                                      <h3>Business pitch deck</h3>
+                                      <p>Make a business pitch deck for a startup selling sustainable water bottles.</p>
+                                      <span class="arrow"><img src="/static/images/arrow.svg" class="arrow-icon"></span>
+                                  </div>
+                                  <div class="card">
+                                      <h3>Healthy eating habits</h3>
+                                      <p>Make a PPT on healthy eating habits for a senior citizen audience.</p>
+                                      <span class="arrow"><img src="/static/images/arrow.svg" class="arrow-icon"></span>
+                                  </div>
+                                  <div class="card">
+                                      <h3>Digital transformation</h3>
+                                      <p>Prepare a presentation for C-suite executives on digital transformation strategies.</p>
+                                      <span class="arrow"><img src="/static/images/arrow.svg" class="arrow-icon"></span>
+                                  </div>
+                              </div>
+                        </div>
+                          </div>
+                  </div>
                   <div class="input-container">
                         <div class="input-bar">
                               <div id="userInput" class="input-box" contenteditable="true" placeholder="Type your message..." onkeypress="handleKeyPress(event)" onpaste="handlePaste(event)"></div>
